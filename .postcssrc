@@ -1,0 +1,17 @@
+module.exports = {
+  plugins: {
+    "precss": {},
+    "postcss-px-to-viewport": {
+      viewportWidth: 750, // (Number) The width of the viewport.
+      viewportHeight: 1334, // (Number) The height of the viewport.
+      unitPrecision: 3, // (Number) The decimal numbers to allow the REM units to grow to.
+      viewportUnit: 'vw'
+    },
+    "cssnano": {
+      // "preset": "advanced",
+      "postcss-zindex": false, // 会重置z-index为1,这是一个天坑，千万记得将postcss-zindex设置为false
+      "autoprefixer": false, // 和postcss自带的autoprefixer重复了,不需要再调用,关掉
+      "reduceIdents": false // 重命名有bug,会重名,关掉
+    }
+  }
+}
